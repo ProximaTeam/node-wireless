@@ -465,6 +465,15 @@ Wireless.prototype._executeConnectWPA = function(essid, password, callback) {
 
     this.emit('command', command);
 
+    var proc          = child_process.spawn(command);
+
+    readline.createInterface({
+      input     : proc.stdout,
+      terminal  : false
+    }).on('line', function(line) {
+      console.log(line);
+    });
+    /*
     exec(command, function(err, stdout, stderr) {
          if (err || stderr) {
             self.emit('error', "Shit is broken TODO");
@@ -476,7 +485,7 @@ Wireless.prototype._executeConnectWPA = function(essid, password, callback) {
         }
 
         callback && callback(null);
-    });
+    });*/
 };
 
 // Connects to an unencrypted network
