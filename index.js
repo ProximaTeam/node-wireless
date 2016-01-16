@@ -1,6 +1,7 @@
 var util = require('util');
 var EventEmitter = require('events').EventEmitter;
 var exec = require('child_process').exec;
+var child_process = require('child_process');
 var _ = require('underscore');
 
 var Wireless = function(config) {
