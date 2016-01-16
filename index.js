@@ -3,6 +3,7 @@ var EventEmitter = require('events').EventEmitter;
 var exec = require('child_process').exec;
 var child_process = require('child_process');
 var _ = require('underscore');
+var readline = require('readline');
 
 var Wireless = function(config) {
     EventEmitter.call(this);
